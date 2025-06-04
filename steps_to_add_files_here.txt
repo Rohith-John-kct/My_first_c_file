@@ -1,0 +1,31 @@
+This file contains the steps to add file from IDEs into Github and vice versa using git commands:
+
+1.Install git in the link: https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe
+2.Open command prompt window and enter the command :git
+3.Set your Github username and email into the Git using the command line:
+                git config --global user."#your github username"
+                git config --global user."#your github email id"  After this, close the command window
+4.Create a folder named 'Git' which later is used to store the Github repository
+5.Open this Git folder in code editors like VS code
+6.Go to Github and copy the repository(repo) link (also called Origin) by following repo->Code->copy link
+7.Now transfer the repository from Github into the Git folder. To do this, use this command in the terminal of the VS Code:git clone repo-link or Origin
+  After entering this command, the repo gets cloned or transfered into the Git folder.All the files from the repository will be visible in this local folder
+8.The path of the folder in the terminal is C:Git/. To include the repository to the path, try the following:
+  In the terminal, enter the command:cd #name_of_repo 
+  This command includes the directory to the repository to the terminal's path\
+9.IN the folder, all the files of the current repo will be found, but except 1 file which is hidden. To view the hidden file, go to Views->Show->Hidden items
+  The hidden .git file will be displayed. This file acts as a bridge between repo and the Git folder
+10.Steps in adding a local file from VS Code to the Github repo:
+   *Create a text file in the VS Code under the Git folder, named "sample.txt"
+   *enter command :git status
+    after entering, the terminal says sample.txt is a untracked file. Also, near the file name 'U' symbol is present, which refers to untracted
+    Untracked means the sample.txt file is neither found in the local Git folder, nor in the Github repository
+   *To add this file in the staging area, enter the command in the VS terminal:git add sample.txt
+    After entering this command, the text file gets added in the staging area --> area where the file is getting ready to be pushed in to the Github repository
+    This makes the file tracked. To check whether it is tracked, again use the command :git status.
+    Now, the file is tracked. Also, the 'U' symbol gets changed to 'A' meaning added
+   *To add this sample.txt file into the Git folder from the staging area, use this command:git commit -m "sample.txt file added"
+   *Now, to add this file in the main branch of Github page (in the browser), use the command :git push origin main
+    For new users, the file is not directly transferred into the Github page, instead, the authencation between VS Code and the Github pops up. 
+    After completing the authencation process, the sample.txt file gets transferred into the Github page.
+11.summary of the above steps: create_file-->Add_in_staging_area-->commit-->push_in_browser
