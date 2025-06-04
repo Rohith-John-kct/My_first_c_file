@@ -34,3 +34,17 @@ This file contains the steps to add file from IDEs into Github and vice versa us
    *git add sample.txt
    *git commit -m "Modified sample.txt file"
    *git push origin main
+13.Lets say you deleted the sample.txt file in the VS Code. This file will not be automatically deleted in the Github page.(Confirm this by using command:git status)
+   In order to update this deletion in the Github page, use the same process:
+   *git add sample.txt #This means the file is not added, rather, the updates (like addition,deletion) are added into the Github page
+   *git commit -m "Deleted sample.txt file"
+   *git push origin main
+   when refreshing the page, the sample.txt file is also deleted in the Github page
+14.Lets say you create a file called sample1.txt in the Github page (following Add file->name file->commit changes->commit message) and not 
+   in the VS Code. Again, this file will not be automatically added in the VS Code Editor.
+   In order to add this file in the VS code, use this command:git pull
+   This pull command updates the changes which is been created in the Github page, into the VS Code
+   sample1.txt file gets added in the code editors
+15.Lets say you type some sentence in the sample1.txt file, in the Github page. This change will not be updated in the VS Code.
+   Use the same pull command:git pull   to update this change in the VS Code
+16.Summary: any modifications->add->commit->push
