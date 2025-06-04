@@ -27,5 +27,10 @@ This file contains the steps to add file from IDEs into Github and vice versa us
    *To add this sample.txt file into the Git folder from the staging area, use this command:git commit -m "sample.txt file added"
    *Now, to add this file in the main branch of Github page (in the browser), use the command :git push origin main
     For new users, the file is not directly transferred into the Github page, instead, the authencation between VS Code and the Github pops up. 
-    After completing the authencation process, the sample.txt file gets transferred into the Github page.
+    After completing the authencation process, the sample.txt file gets transferred into the Github page, which can be seen when refreshing the page
 11.summary of the above steps: create_file-->Add_in_staging_area-->commit-->push_in_browser
+12.Now, enter a text sentence in sample.txt file. The text file changes from 'A' to 'M', meaning that the file is been modified
+   Here, the modified text has to be tracked and updated in the Github page. To do this, follow the mentioned steps. Enter the commands:
+   *git add sample.txt
+   *git commit -m "Modified sample.txt file"
+   *git push origin main
