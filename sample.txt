@@ -1,1 +1,0 @@
-Greetings. This file is to text how I push local files into github via git
