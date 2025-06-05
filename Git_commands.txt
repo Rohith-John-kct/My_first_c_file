@@ -48,3 +48,30 @@ This file contains the steps to add file from IDEs into Github and vice versa us
 15.Lets say you type some sentence in the sample1.txt file, in the Github page. This change will not be updated in the VS Code.
    Use the same pull command:git pull   to update this change in the VS Code
 16.Summary: any modifications->add->commit->push
+17.In step 7, a repository was created in the Github page and got transfered into the VS Code.Now, we are going to create a folder in local Git folder and \
+   and make that a repository in the Github page.
+18.Create a folder named HTML_WORKS in the Git folder and create or copy various files like hTML.html, style.css, script.js ect.
+   Open Git folder->HTML_WORKS->hTML.html in VS Code. Similarly, correct this path in the VS terminal. For this, use the commands:
+   *cd ..              #This command forces the path to be C:\Git\ [HELPS TO BACKTRACE A SPECIFIC PATH]
+   *cd HTML_WORKS      #This command forces the path to be C:\Git\HTML_WORKS
+19.On opening this HTML_WORKS folder in the File explorer, we find that the .git file (bridging file between the folder and Github page) is not found, even after clicking the hidden option.
+   To include this .git hidden file, use the command:
+   *git init
+   After using this command, all the files in this HTML_WORKS folder gets untracked (U). We can check this by the command :git status
+20.Now, we can use the same process: modifications->add->commit->push. But, the add process:git add #file_name has to be done for each file (hTML.html,style.css,script.js) in the HTML_WORKS Folder.
+   To make this add process easier, use the command:git ..
+   This command add all the files simultaneously into the staging area, and also making all files tracked.
+   Now commit:git commit -m "all files added"
+   Now push: This pushing command cannot be done directly since there were no repository found in the Github page, which could match the HTML_WORKS folder.
+   This can be verified when you use the push command:git push origin main. The terminal replies as there is No origin found. 
+   So go to Github page, create a repo named HTML_WORKS and copy its hyperlink.
+   Use this command to map the new repo with the local HTML_WORKS folder :git remote add origin hyperlink
+   Paste this hyperlink along with the command and now the local HTML_FOLDER and the new repo will be mapped
+21.Now, in Github page, when you check the branch of the repo, it is named as 'main'.But, when you verify this using the Git command in the VS Code:
+   *git branch
+   The terminal reponds as 'master' instead of 'main' as the branch of the repo
+   So you can use this command to push:git push origin master
+   -instead of this command:git push origin main which shows errpr
+22.But, if you like to you git push origin main command, instead of master command, you have to change the master from master to main. This can be done by a command:
+   *git branch -M main
+   Now, the master branch gets changed into main branch. Verify this using the git command:git branch
